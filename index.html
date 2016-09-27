@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>TASKR</title>
+  <meta name="description" content="Prototype of TASKR: a todo-list">
+  <meta name="author" content="Jason Chen">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/page.css">
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+</head>
+<body class = "blue">
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container white-text">
+    <div class="row">
+      <div class = "title spaced">TASKR X json.chen</div>
+      <div class = "blurb spaced-1">the right <b>task</b> for the right <b>person</b></div>
+    </div>
+    <!-- user input -->
+    <form>
+      <div class="row">
+        <div class = "eight columns">
+          <label class = "spaced-1 white-text" for="task">What would you like to do?</label>
+          <input type ="text" class = "u-full-width" placeholder="write task here" id = "task">
+        </div>
+        <div class = "three columns">
+          <label class = "spaced-1 white-text" for="dueDate">Date</label>
+          <input type ="text" class = "u-full-width" placeholder="10-02-2016" id = "dueDate">
+        </div>
+        <div class= "one column">
+          <label for="add">&nbsp;</label>
+          <input class="button" type="button" value="ADD" id = "add">      
+
+        </div>
+        
+
+      </div>
+    </form>
+    <!-- todo list results are here -->
+    <div class = "row" id = "results">
+
+    </div>
+    
+  </div>
+
+
+<footer class = "blue-1 white-text">
+  <div >
+    FOR EDUCATIONAL PURPOSES ONLY<br>
+    &#169; 2016 All Rights Reserved<br>
+    powered by <a class = "portfolio" href = "http://jason-chen.net">Jason</a><br>
+  </div>
+</footer>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+
+<!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+<script src="js/util.js"></script>
+
+
+</html>

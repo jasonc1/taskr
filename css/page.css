@@ -1,0 +1,99 @@
+/*-- REUSABLES
+  ––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+.blue{
+  background-color: #03a9f4;
+}
+
+.blue-1{
+  background-color: #4fc3f7;
+}
+
+.white-text{
+  color: #fff;
+}
+
+.spaced{
+  letter-spacing: 1rem;
+}
+.spaced-1{
+  letter-spacing: .5rem;
+}
+
+
+/*-- CUSTOMS
+  ––––––––––––––––––––––––––––––––––––––––––––––––––*/
+a{
+  text-decoration: none;
+  transition: color .5s;
+}
+a:hover{
+  color: #1de9b6;
+}
+
+.container{
+  height: 100vh;
+  width: 100%;
+  padding-top: 10rem;
+}
+
+
+
+.title{
+  font-size: 54pt;
+}
+.blurb{
+  margin-top: -1.5rem;
+  font-size: 14pt;
+}
+
+form{
+  margin-top: 5rem;
+}
+
+label{
+  font-weight: 0;
+
+}
+
+input[type="text"]{
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: #03a9f4;
+  transition: border .5s;
+}
+input[type="text"]:focus{
+  border: 1px solid #1de9b6;
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #fff;
+}
+
+input.button{
+  border: 1px solid #fff;
+  letter-spacing: .5rem;
+  color: #fff;
+  transition: border .5s, color .5s;
+
+}
+
+input.button:hover{
+  border: 1px solid #1de9b6;
+  color: #1de9b6;
+}
+
+
+footer{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  font-size: 10pt;
+}
+footer a {
+  color: white;
+}
