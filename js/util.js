@@ -41,18 +41,20 @@ var completeTask = function(e){
   temp.childNodes[0].setAttribute("class", "box-fill");
   //append to bottom.
   e.parentNode.parentNode.appendChild(temp);
+
   deleteTask(e);
 }
 
 var deleteTask = function(e){
   //deletes the task...
   e.parentNode.parentNode.removeChild(e.parentNode);
+
 }
 
 var createListElement = function(taskdata, date){//creates a new row, for a task...
   tasks++;
   var task = document.createElement("div");
-  task.setAttribute("class", "row task ");
+  task.setAttribute("class", "row task");
   task.setAttribute("id", "tasks " + tasks);
 
   var box = document.createElement("a");//box to mark as completed
@@ -78,6 +80,8 @@ var createListElement = function(taskdata, date){//creates a new row, for a task
   task.appendChild(due);
   task.appendChild(del);
 
+
   document.querySelector("#results").insertBefore(task, document.querySelector("#results").firstChild);
+  setTimeout(function(){document.getElementById("tasks " + tasks).style.opacity = 1;}, 500);
 
 }
