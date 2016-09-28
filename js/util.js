@@ -1,20 +1,20 @@
+//purposely made WITHOUT jquery. therefore, not going to add animations
+
 var tasks = 0;
 
 //functions
 var addTask = function(){
   var task = document.getElementById("task").value;
   var date = document.getElementById("dueDate").value;
-  if(task ==""){
+  if(task ==""){//tasks will only be added if there is SOMETHING in the input
     alert("task cannot be empty");
     clearInputs();
     return
   }
-  if(date == ""){
+  if(date == ""){//date can be optional
     date = "none";
-
   }
   createListElement(task, date);
-
   clearInputs();
 
 }
@@ -25,51 +25,50 @@ var enter = function(e){
   }
 }
 
-var clearInputs = function(){
+var clearInputs = function(){//"resets" input boxes
   document.getElementById("task").value = "";
   document.getElementById("dueDate").value = "";
 }
 
 
 var completeTask = function(e){
-  console.log("completing...");
+  // console.log("completing...");
+  //create copy
   var temp = e.parentNode.cloneNode(true);
+  //"cross through means done"
+  // console.log(temp);
   temp.childNodes[1].setAttribute("style", "text-decoration: line-through; margin-left: 0;");
   temp.childNodes[0].setAttribute("class", "box-fill");
-  console.log(temp);
+  //append to bottom.
   e.parentNode.parentNode.appendChild(temp);
-
   deleteTask(e);
 }
 
 var deleteTask = function(e){
-  // console.log("deleting...");
-  // console.log(e.parentNode);
+  //deletes the task...
   e.parentNode.parentNode.removeChild(e.parentNode);
 }
 
-var createListElement = function(taskdata, date){
+var createListElement = function(taskdata, date){//creates a new row, for a task...
   tasks++;
-  console.log(tasks);
   var task = document.createElement("div");
   task.setAttribute("class", "row task ");
   task.setAttribute("id", "tasks " + tasks);
 
-  var box = document.createElement("a");
+  var box = document.createElement("a");//box to mark as completed
   box.setAttribute("class", "box");
   box.setAttribute("onclick", "completeTask(this)");
 
-
-  var text = document.createElement("div");
+  var text = document.createElement("div");//actual task
   text.appendChild(document.createTextNode(taskdata));
   text.setAttribute("class", "nine columns");
   text.setAttribute("style", "margin-left: 0;");
 
-  var due = document.createElement("div");
+  var due = document.createElement("div");// shows date due
   due.appendChild(document.createTextNode(date));
   due.setAttribute("class", "two columns");
 
-  var del = document.createElement("a");
+  var del = document.createElement("a");//to delete task
   del.setAttribute("class", "del");
   del.appendChild(document.createTextNode("X"));
   del.setAttribute("onclick", "deleteTask(this)");
