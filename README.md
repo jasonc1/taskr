@@ -12,3 +12,6 @@ If a task was created without a due date, the date section lists it as "none." F
 
 ## For Future Improvements
 Since this was a small assignment as an introductory javascript exercise, some features were left out. For future development, I would animate the creation, deletion, and completion of events. In addition, I would do some date validation, and provide a date picker.
+
+
+**Side note, if you are wondering, I use json as my dev name.
