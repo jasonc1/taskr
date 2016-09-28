@@ -47,7 +47,9 @@ var completeTask = function(e){
 
 var deleteTask = function(e){
   //deletes the task...
-  e.parentNode.parentNode.removeChild(e.parentNode);
+  console.log(e.parentNode)
+  e.parentNode.style.opacity = 0;
+  setTimeout(function(){e.parentNode.parentNode.removeChild(e.parentNode);}, 500);
 
 }
 
@@ -82,6 +84,6 @@ var createListElement = function(taskdata, date){//creates a new row, for a task
 
 
   document.querySelector("#results").insertBefore(task, document.querySelector("#results").firstChild);
-  setTimeout(function(){document.getElementById("tasks " + tasks).style.opacity = 1;}, 500);
+  setTimeout(function(){document.getElementById("tasks " + tasks).style.opacity = 1;}, 0);
 
 }
