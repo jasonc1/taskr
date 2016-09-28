@@ -36,18 +36,19 @@ var completeTask = function(e){
   //create copy
   var temp = e.parentNode.cloneNode(true);
   //"cross through means done"
-  // console.log(temp);
+  console.log(temp);
+  temp.style.opacity = 0;
   temp.childNodes[1].setAttribute("style", "text-decoration: line-through; margin-left: 0;");
   temp.childNodes[0].setAttribute("class", "box-fill");
   //append to bottom.
   e.parentNode.parentNode.appendChild(temp);
+  setTimeout(function(){temp.style.opacity = 1;}, 0);
 
   deleteTask(e);
 }
 
 var deleteTask = function(e){
   //deletes the task...
-  console.log(e.parentNode)
   e.parentNode.style.opacity = 0;
   setTimeout(function(){e.parentNode.parentNode.removeChild(e.parentNode);}, 500);
 
