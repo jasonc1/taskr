@@ -11,7 +11,7 @@ var addTask = function(){
   }
   if(date == ""){
     date = "none";
-    tasks++;
+
   }
   createListElement(task, date);
 
@@ -31,24 +31,33 @@ var clearInputs = function(){
 }
 
 
-var completeTask = function(){
+var completeTask = function(e){
   console.log("completing...");
+  var temp = e.parentNode.cloneNode(true);
+  temp.childNodes[1].setAttribute("style", "text-decoration: line-through; margin-left: 0;");
+  temp.childNodes[0].setAttribute("class", "box-fill");
+  console.log(temp);
+  e.parentNode.parentNode.appendChild(temp);
+
+  deleteTask(e);
 }
 
 var deleteTask = function(e){
   // console.log("deleting...");
-  console.log(e.parentNode);
+  // console.log(e.parentNode);
   e.parentNode.parentNode.removeChild(e.parentNode);
 }
 
 var createListElement = function(taskdata, date){
+  tasks++;
+  console.log(tasks);
   var task = document.createElement("div");
   task.setAttribute("class", "row task ");
   task.setAttribute("id", "tasks " + tasks);
 
   var box = document.createElement("a");
   box.setAttribute("class", "box");
-  box.setAttribute("onclick", "completeTask()");
+  box.setAttribute("onclick", "completeTask(this)");
 
 
   var text = document.createElement("div");
@@ -70,6 +79,6 @@ var createListElement = function(taskdata, date){
   task.appendChild(due);
   task.appendChild(del);
 
-  document.querySelector("#results").appendChild(task);
+  document.querySelector("#results").insertBefore(task, document.querySelector("#results").firstChild);
 
 }
