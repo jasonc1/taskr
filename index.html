@@ -39,16 +39,16 @@
     <form>
       <div class="row">
         <div class = "eight columns">
-          <label class = "spaced-1 white-text" for="task">What would you like to do?</label>
-          <input type ="text" class = "u-full-width" placeholder="write task here" id = "task">
+          <label class = " white-text" for="task">What would you like to do?</label>
+          <input type ="text" class = "u-full-width" placeholder="write task here" id = "task" onkeyup = "enter(event)">
         </div>
         <div class = "three columns">
-          <label class = "spaced-1 white-text" for="dueDate">Date</label>
-          <input type ="text" class = "u-full-width" placeholder="10-02-2016" id = "dueDate">
+          <label class = " white-text" for="dueDate">Date</label>
+          <input type ="text" class = "u-full-width" placeholder="10-02-2016" id = "dueDate" onkeyup = "enter(event)">
         </div>
         <div class= "one column">
           <label for="add">&nbsp;</label>
-          <input class="button" type="button" value="ADD" id = "add">      
+          <input class="button" type="button" value="ADD" id = "add" onclick = "addTask()" >      
 
         </div>
         
@@ -56,7 +56,13 @@
       </div>
     </form>
     <!-- todo list results are here -->
-    <div class = "row" id = "results">
+
+    <div class = "row spaced-1" id = "taskCols">
+      <div class = "box"></div>
+      <div class= "nine columns">Tasks</div>
+      <div class= "two columns">Date Due</div>
+    </div>
+    <div class = "row " id = "results">
 
     </div>
     

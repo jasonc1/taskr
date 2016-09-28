@@ -97,3 +97,34 @@ footer{
 footer a {
   color: white;
 }
+#taskCols{
+  margin-bottom: 1rem;
+
+}
+#taskCols :nth-child(2){
+  margin-left: 0;
+}
+
+.box{
+  border: 1px solid #fff;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  margin-right: 1rem;
+  float: left;
+    cursor: pointer;
+
+}
+
+.del{
+  color: white;
+  display: inline-block;
+  margin: 0;
+  cursor: pointer;
+}
+.task{
+  margin-bottom: 1rem;
+}
+div.box{
+visibility: hidden;
+}
