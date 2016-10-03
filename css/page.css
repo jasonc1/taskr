@@ -69,9 +69,11 @@ input[type="text"]:focus{
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #fff;
+  opacity: .66;
 }
 ::-moz-placeholder { /* Firefox 19+ */
   color: #fff;
+  opacity: .66;
 }
 
 input.button{

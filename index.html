@@ -43,22 +43,28 @@
           <input type ="text" class = "u-full-width" placeholder="write task here" id = "task" onkeyup = "enter(event)">
         </div>
         <div class = "three columns">
-          <label class = " white-text" for="dueDate">Date</label>
+          <label class = " white-text" for="dueDate">Date [optional]</label>
           <input type ="text" class = "u-full-width" placeholder="10-02-2016" id = "dueDate" onkeyup = "enter(event)">
         </div>
         <div class= "one column">
           <label for="add">&nbsp;</label>
-          <input class="button" type="button" value="ADD" id = "add" onclick = "addTask()" >      
+          <input class="button" type="button" value="ADD" id = "add" onclick = "addTask()" >
         </div>
-        
-
+      </div>
+      <div class="row">
+        <div class = "eleven columns">
+          <label class = "white-text" for="assignPerson">Assign to [optional]</label>
+          <input type = "text" class = "u-full-width" placeholder="Jason Chen" id = "assignPerson" onkeyup = "enter(event)">
+        </div>
       </div>
     </form>
     <!-- todo list results are here -->
     <div class = "row spaced-1" id = "taskCols">
       <div class = "box"></div>
-      <div class= "nine columns">Tasks</div>
+      <div class= "seven columns">Tasks</div>
       <div class= "two columns">Date Due</div>
+      <div class= "two columns">Assigned</div>
+
     </div>
     <div class = "row " id = "results">
 

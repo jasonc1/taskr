@@ -6,6 +6,7 @@ var tasks = 0;
 var addTask = function(){
   var task = document.getElementById("task").value;
   var date = document.getElementById("dueDate").value;
+  var person = document.getElementById("assignPerson").value;
   if(task ==""){//tasks will only be added if there is SOMETHING in the input
     alert("task cannot be empty");
     clearInputs();
@@ -14,7 +15,10 @@ var addTask = function(){
   if(date == ""){//date can be optional
     date = "none";
   }
-  createListElement(task, date);
+  if(person == ""){
+    person = "none";
+  }
+  createListElement(task, date, person);
   clearInputs();
 
 }
@@ -54,7 +58,7 @@ var deleteTask = function(e){
 
 }
 
-var createListElement = function(taskdata, date){//creates a new row, for a task...
+var createListElement = function(taskdata, date, name){//creates a new row, for a task...
   tasks++;
   var task = document.createElement("div");
   task.setAttribute("class", "row task");
@@ -66,12 +70,16 @@ var createListElement = function(taskdata, date){//creates a new row, for a task
 
   var text = document.createElement("div");//actual task
   text.appendChild(document.createTextNode(taskdata));
-  text.setAttribute("class", "nine columns");
+  text.setAttribute("class", "seven columns");
   text.setAttribute("style", "margin-left: 0;");
 
   var due = document.createElement("div");// shows date due
   due.appendChild(document.createTextNode(date));
   due.setAttribute("class", "two columns");
+
+  var person = document.createElement("div");
+  person.appendChild(document.createTextNode(name));
+  person.setAttribute("class", "two columns");
 
   var del = document.createElement("a");//to delete task
   del.setAttribute("class", "del");
@@ -81,6 +89,7 @@ var createListElement = function(taskdata, date){//creates a new row, for a task
   task.appendChild(box);
   task.appendChild(text);
   task.appendChild(due);
+  task.appendChild(person);
   task.appendChild(del);
 
 
