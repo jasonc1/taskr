@@ -32,6 +32,7 @@ var enter = function(e){
 var clearInputs = function(){//"resets" input boxes
   document.getElementById("task").value = "";
   document.getElementById("dueDate").value = "";
+  document.getElementById("assignPerson").value = "";
 }
 
 
