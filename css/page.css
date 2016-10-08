@@ -81,7 +81,6 @@ input.button{
   letter-spacing: .5rem;
   color: #fff;
   transition: border .5s, color .5s;
-
 }
 
 input.button:hover{
