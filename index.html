@@ -47,15 +47,25 @@
           <label class = " white-text" for="dueDate">Date [optional]</label>
           <input type ="text" class = "u-full-width" placeholder="10-02-2016" id = "dueDate" onkeyup = "enter(event)">
         </div>
+        
+      </div>
+      <div class="row">
+        <div class = "five columns">
+          <label class = "white-text" for="assignPerson">Assign to [optional]</label>
+          <input type = "text" class = "u-full-width" placeholder="Jason Chen" id = "assignPerson" onkeyup = "enter(event)">
+        </div>
+        <div class = "one column" id = "or">
+          or
+        </div>
+         <div class = "five columns">
+          <label class = "white-text" for="assignPerson">Assign to [optional]</label>
+          <select class="u-full-width blue" id="assignees">
+            
+          </select>
+        </div>
         <div class= "one column">
           <label for="add">&nbsp;</label>
           <input class="button" type="button" value="ADD" id = "add" onclick = "addTask()" >
-        </div>
-      </div>
-      <div class="row">
-        <div class = "eleven columns">
-          <label class = "white-text" for="assignPerson">Assign to [optional]</label>
-          <input type = "text" class = "u-full-width" placeholder="Jason Chen" id = "assignPerson" onkeyup = "enter(event)">
         </div>
       </div>
     </form>

@@ -1,12 +1,18 @@
 //purposely made WITHOUT jquery. therefore, not going to add animations
 
 var tasks = 0;
+//asignees
+var assignees = ["","Jason", "Derek", "Nate", "Samir", "Donnie"];
+window.onload = function(){
+  populate();
+}
 
 //functions
 var addTask = function(){
   var task = document.getElementById("task").value;
   var date = document.getElementById("dueDate").value;
-  var person = document.getElementById("assignPerson").value;
+  var personText = document.getElementById("assignPerson").value;
+  var personSelect = document.getElementById("assignees").value;
   if(task ==""){//tasks will only be added if there is SOMETHING in the input
     alert("task cannot be empty");
     clearInputs();
@@ -15,9 +21,23 @@ var addTask = function(){
   if(date == ""){//date can be optional
     date = "none";
   }
-  if(person == ""){
+  if((personSelect == "") && !(personText == "")){
+    person = personText;
+    if(!isAssigneeExists(personText)){
+      assignees.push(personText);
+      console.log(assignees);
+    }
+    addAssignee(personText);
+  }
+
+  if(!(personSelect == "") && (personText == "")){
+    document.getElementById("assignPerson").value = "";
+    person = personSelect;
+  }
+  if(!(personSelect == "") && !(personText == "")){
     person = "none";
   }
+
   createListElement(task, date, person);
   clearInputs();
 
@@ -33,6 +53,32 @@ var clearInputs = function(){//"resets" input boxes
   document.getElementById("task").value = "";
   document.getElementById("dueDate").value = "";
   document.getElementById("assignPerson").value = "";
+  document.getElementById("assignees").value = assignees[0];
+}
+
+var addAssignee = function(person){
+    var dropdown = document.getElementById("assignees");
+    var option = document.createElement("option");
+    option.appendChild(document.createTextNode(person));
+    dropdown.appendChild(option);
+}
+
+var isAssigneeExists = function(person){
+  for(var a in assignees){
+    if(person == assignees[a]){
+      return true;
+    }
+  }
+  return false;
+}
+
+var populate = function(){
+  var dropdown = document.getElementById("assignees");
+  for(var a in assignees){
+    var option = document.createElement("option");
+    option.appendChild(document.createTextNode(assignees[a]));
+    dropdown.appendChild(option);
+  }
 }
 
 

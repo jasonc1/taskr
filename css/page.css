@@ -54,7 +54,17 @@ form{
 
 label{
   font-weight: 0;
+}
 
+select{
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+#or{
+  margin-top: 3rem;
+  font-size: 12pt;
+  text-align: center;
 }
 
 input[type="text"]{
@@ -154,7 +164,7 @@ visibility: hidden;
   background-color: #03a9f4;
   border-radius: 5px;
   border: 1px solid #fff;
-  padding: 5px;
+  padding: 5px 10px 5px 10px;
 
   }
 
@@ -207,6 +217,12 @@ color: #fff;
 .ui-datepicker tbody td {
   padding: 0px;
   margin: 0px;
-  width: 15px;
-  height: 15px;
+}
+
+.ui-datepicker td span, .ui-datepicker td a {
+  display: inline-block;;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+
 }
