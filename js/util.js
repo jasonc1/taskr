@@ -98,3 +98,13 @@ var createListElement = function(taskdata, date, name){//creates a new row, for 
   setTimeout(function(){document.getElementById("tasks " + tasks).style.opacity = 1;}, 0);
 
 }
+
+//jquery stuff
+$( function() {
+  console.log("ready");
+  $("#dueDate").datepicker({
+    inline: true,
+      showOtherMonths: true,
+      dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    });
+});

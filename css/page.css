@@ -44,7 +44,8 @@ a:hover{
 }
 .blurb{
   margin-top: -1.5rem;
-  font-size: 14pt;
+  font-size: 12pt;
+
 }
 
 form{
@@ -141,4 +142,71 @@ footer a {
 }
 div.box{
 visibility: hidden;
+}
+
+
+/*-- datePicker
+  ––––––––––––––––––––––––––––––––––––––––––––––––––*/
+.ui-datepicker {
+  width: 325px;
+  height: auto;
+  margin: 5px auto 0;
+  background-color: #03a9f4;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  padding: 5px;
+
+  }
+
+.ui-datepicker table {
+  width: 100%;
+}
+
+.ui-datepicker a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.ui-datepicker-header{
+color: #fff;
+  letter-spacing: .2em;
+  font-size: 8pt;
+  line-height: 2rem;
+  margin-bottom: -1rem;
+}
+.ui-datepicker-title {
+  text-align: center;
+}
+.ui-datepicker-prev, .ui-datepicker-next {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 8pt;
+
+}
+
+.ui-datepicker-prev{
+  float: left;
+
+}
+
+.ui-datepicker-next{
+  float: right;
+}
+
+
+.ui-datepicker th{
+  color: #fff;
+  font-size: 8pt;
+    padding: 5px 0;
+
+}
+
+.ui-datepicker tbody td {
+  padding: 0px;
+  margin: 0px;
+  width: 15px;
+  height: 15px;
 }
