@@ -226,3 +226,25 @@ color: #fff;
   height: 30px;
 
 }
+
+/*-- MOBILE
+  ––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/*general*/
+@media only screen and (max-width: 1000px) {
+
+}
+
+/*tablet*/
+@media only screen and (max-device-width: 1024px) and (orientation: landscape){
+
+}
+
+/*phone*/
+@media only screen and (max-device-width: 768px) {
+  .container{
+    height: 100%;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

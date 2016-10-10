@@ -45,7 +45,9 @@
         </div>
         <div class = "three columns">
           <label class = " white-text" for="dueDate">Date [optional]</label>
-          <input type ="text" class = "u-full-width" placeholder="10-02-2016" id = "dueDate" onkeyup = "enter(event)">
+          
+          <!-- inline datepicker call, to prevent random box (empty datepicker) populating on bottom of page -->
+          <input type ="text" class = "u-full-width" placeholder="10-02-2016" id = "dueDate" onkeyup = "enter(event)" onclick="$('#dueDate').datepicker();$('#dueDate').datepicker('show');">
         </div>
         
       </div>

@@ -29,14 +29,17 @@ var addTask = function(){
     }
     addAssignee(personText);
   }
-
-  if(!(personSelect == "") && (personText == "")){
+  else if(!(personSelect == "") && (personText == "")){
     document.getElementById("assignPerson").value = "";
     person = personSelect;
   }
-  if(!(personSelect == "") && !(personText == "")){
+  else if((personSelect == "") && (personText == "")){
     person = "none";
   }
+  else {//if both are filled, will default to text entry...
+    person = personText;
+  }
+
 
   createListElement(task, date, person);
   clearInputs();
@@ -145,12 +148,3 @@ var createListElement = function(taskdata, date, name){//creates a new row, for 
 
 }
 
-//jquery stuff
-$( function() {
-  console.log("ready");
-  $("#dueDate").datepicker({
-    inline: true,
-      showOtherMonths: true,
-      dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-    });
-});
