@@ -10,7 +10,6 @@ window.onload = function(){
 //functions
 var addTask = function(){
   toast("#createToast");
-
   var task = document.getElementById("task").value;
   var date = document.getElementById("dueDate").value;
   var personText = document.getElementById("assignPerson").value;
@@ -23,6 +22,7 @@ var addTask = function(){
   if(date == ""){//date can be optional
     date = "none";
   }
+  //different cases for text
   if((personSelect == "") && !(personText == "")){
     person = personText;
     if(!isAssigneeExists(personText)){
@@ -47,7 +47,7 @@ var addTask = function(){
 
 }
 
-var toast = function(type){
+var toast = function(type){//visual notification to user
   console.log("meh");
   $(type).stop().fadeIn(500).delay(1000).fadeOut(500);
 }
@@ -65,14 +65,14 @@ var clearInputs = function(){//"resets" input boxes
   document.getElementById("assignees").value = assignees[0];
 }
 
-var addAssignee = function(person){
+var addAssignee = function(person){//to add person to select dropdown
     var dropdown = document.getElementById("assignees");
     var option = document.createElement("option");
     option.appendChild(document.createTextNode(person));
     dropdown.appendChild(option);
 }
 
-var isAssigneeExists = function(person){
+var isAssigneeExists = function(person){//prevents extra
   for(var a in assignees){
     if(person == assignees[a]){
       return true;
@@ -81,7 +81,7 @@ var isAssigneeExists = function(person){
   return false;
 }
 
-var populate = function(){
+var populate = function(){//for select dropdown
   var dropdown = document.getElementById("assignees");
   for(var a in assignees){
     var option = document.createElement("option");
@@ -96,7 +96,6 @@ var completeTask = function(e){
   //create copy
   var temp = e.parentNode.cloneNode(true);
   //"cross through means done"
-  console.log(temp);
   temp.style.opacity = 0;
   temp.childNodes[1].setAttribute("style", "text-decoration: line-through; margin-left: 0;");
   temp.childNodes[0].setAttribute("class", "box-fill");
@@ -109,12 +108,13 @@ var completeTask = function(e){
 }
 
 var deleteTask = function(e, isDelete){
-  //deletes the task...
-  e.parentNode.parentNode.style.opacity = 0;
-  setTimeout(function(){e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);}, 500);
   if(isDelete){//for when delete task action is called.
     toast("#deleteToast");
   }
+  //deletes the task...
+  e.parentNode.parentNode.style.opacity = 0;
+  setTimeout(function(){e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);}, 500);
+
 }
 
 var createListElement = function(taskdata, date, name){//creates a new row, for a task...
@@ -151,6 +151,7 @@ var createListElement = function(taskdata, date, name){//creates a new row, for 
   var headRight = document.createElement("div");
   headRight.setAttribute("class", "head-right");
 
+//appending to results
   task.appendChild(box);
   task.appendChild(text);
   task.appendChild(headRight);
@@ -165,7 +166,7 @@ var createListElement = function(taskdata, date, name){//creates a new row, for 
 
 //Mobile
 
-
+//create cancel button for form
 var cancel = document.createElement("a");
 cancel.setAttribute("id", "cancel");
 cancel.setAttribute("class", "one column");
@@ -173,18 +174,20 @@ cancel.appendChild(document.createTextNode("x"));
 $("form").append(cancel);
 
 $(".actionButton").click(function(){
+  //display mobile form
   $("form").show(500);
   $(".resultWrap").hide(500);
   $(".actionButton").hide(500);
 
   $("#cancel").click(function(){
+    //hide form if canceled
     $("form").hide(500);
     $(".resultWrap").show(500);
     $(".actionButton").show(500);
     $("form").remove("#cancel");
   })
 
-  $(document).keyup(function(e){
+  $(document).keyup(function(e){//escape key as alternate cancel
      if (e.keyCode == 27) { // escape key maps to keycode `27`
         $("form").hide(500);
         $(".resultWrap").show(500);
