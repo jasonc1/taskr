@@ -108,11 +108,11 @@ var completeTask = function(e){
 
 }
 
-var deleteTask = function(e, toast){
+var deleteTask = function(e, isDelete){
   //deletes the task...
   e.parentNode.parentNode.style.opacity = 0;
   setTimeout(function(){e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);}, 500);
-  if(toast){//for when delete task action is called.
+  if(isDelete){//for when delete task action is called.
     toast("#deleteToast");
   }
 }
@@ -165,11 +165,12 @@ var createListElement = function(taskdata, date, name){//creates a new row, for 
 
 //Mobile
 
-  var cancel = document.createElement("a");
-  cancel.setAttribute("id", "cancel");
-  cancel.setAttribute("class", "one column");
-  cancel.appendChild(document.createTextNode("x"));
-  $("form").append(cancel);
+
+var cancel = document.createElement("a");
+cancel.setAttribute("id", "cancel");
+cancel.setAttribute("class", "one column");
+cancel.appendChild(document.createTextNode("x"));
+$("form").append(cancel);
 
 $(".actionButton").click(function(){
   $("form").show(500);
