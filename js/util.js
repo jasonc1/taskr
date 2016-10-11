@@ -103,8 +103,9 @@ var completeTask = function(e){
 
 var deleteTask = function(e){
   //deletes the task...
-  e.parentNode.style.opacity = 0;
-  setTimeout(function(){e.parentNode.parentNode.removeChild(e.parentNode);}, 500);
+
+  e.parentNode.parentNode.style.opacity = 0;
+  setTimeout(function(){e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);}, 500);
 
 }
 
@@ -122,29 +123,49 @@ var createListElement = function(taskdata, date, name){//creates a new row, for 
   text.appendChild(document.createTextNode(taskdata));
   text.setAttribute("class", "seven columns");
   text.setAttribute("style", "margin-left: 0;");
+  text.setAttribute("id", "taskresult");
 
   var due = document.createElement("div");// shows date due
   due.appendChild(document.createTextNode(date));
   due.setAttribute("class", "two columns");
+  due.setAttribute("id", "dateresult");
 
   var person = document.createElement("div");
   person.appendChild(document.createTextNode(name));
   person.setAttribute("class", "two columns");
+  person.setAttribute("id", "personresult");
 
   var del = document.createElement("a");//to delete task
   del.setAttribute("class", "del");
   del.appendChild(document.createTextNode("X"));
   del.setAttribute("onclick", "deleteTask(this)");
 
+  var headRight = document.createElement("div");
+  headRight.setAttribute("class", "head-right");
+
   task.appendChild(box);
   task.appendChild(text);
-  task.appendChild(due);
-  task.appendChild(person);
-  task.appendChild(del);
+  task.appendChild(headRight);
+  headRight.appendChild(due);
+  headRight.appendChild(person);
+  headRight.appendChild(del);
+  // task.appendChild(due);
+  // task.appendChild(person);
+  // task.appendChild(del);
 
 
   document.querySelector("#results").insertBefore(task, document.querySelector("#results").firstChild);
   setTimeout(function(){document.getElementById("tasks " + tasks).style.opacity = 1;}, 0);
 
 }
+
+//Mobile
+// var showForm = function(){
+//   document.getElementById('form').style.display = "block";
+// }
+$(".actionButton").click(function(){
+  $("#form").toggle(500);
+  
+
+})
 

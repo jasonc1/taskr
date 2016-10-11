@@ -23,6 +23,7 @@
 
 /*-- CUSTOMS
   ––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
 a{
   text-decoration: none;
   transition: color .5s;
@@ -30,16 +31,23 @@ a{
 a:hover{
   color: #1de9b6;
 }
+html, body{
+  height: 100%;
+}
 
 .container{
-  height: 100vh;
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -78px; 
+
   width: 100%;
-  padding-top: 10rem;
+
 }
 
 
 
 .title{
+    padding-top: 10rem;
   font-size: 54pt;
 }
 .blurb{
@@ -102,9 +110,11 @@ input.button:hover{
 
 footer{
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 0rem;
   text-align: center;
   font-size: 10pt;
+  height: 78px;
+
 }
 footer a {
   color: white;
@@ -224,7 +234,10 @@ color: #fff;
   text-align: center;
   width: 30px;
   height: 30px;
+}
 
+.actionButton{
+  display:none;
 }
 
 /*-- MOBILE
@@ -241,10 +254,89 @@ color: #fff;
 
 /*phone*/
 @media only screen and (max-device-width: 768px) {
+  .title{
+    padding-top: 0;
+  }
   .container{
+
     height: 100%;
     padding-top: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
   }
+.blurb{
+  margin-bottom: 2rem;
+}
+
+  div #taskCols{
+    letter-spacing: 0;
+    font-size: 10pt;
+  }
+
+  div #taskCols *{
+    margin-right: 1rem;
+    width: auto;
+  }
+
+  #taskhead{
+    float: left;
+  }
+  .head-right{
+    text-align: right;
+    float: right;
+  }
+  .head-right *{
+    display: inline-block;
+    margin-right: 10px;
+  } 
+
+  #results{
+    font-size: 10pt;
+    height: auto;
+
+  }
+
+  #personresult{
+    margin-right: 10px;
+    width: auto;
+  }
+  #dateresult{
+    width: auto;
+    margin-right: 10px;
+  }
+  #taskresult{
+    width: auto;
+  }
+
+  /*have to remove in mobile because of bugs from either rendering issues with browsers or skeletoncss*/
+  select, #or{
+    display:none;
+  }
+
+
+  form .column, .columns{
+    width: 100%;
+  }
+  form{
+      display:none;
+
+  }
+  .actionButton{
+    display:inline-block;
+    position: fixed;
+    z-index: 100;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    border: 1px solid #fff;
+    right: 0;
+    bottom: 0;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    background-color: #fff;
+    text-align: center;
+    font-size: 8rem;
+    line-height: 5rem;
+  }
+
 }
