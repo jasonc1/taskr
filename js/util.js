@@ -41,14 +41,13 @@ var addTask = function(){
   }
 
   createListElement(task, date, person);
-  toast("a", "#createToast");
+  toast("#createToast");
   clearInputs();
 
 }
 
-var toast = function(text, type){
+var toast = function(type){
   console.log("meh");
-  $(type).append(document.createTextNode());
   $(type).stop().fadeIn(500).delay(1000).fadeOut(500);
 }
 
@@ -193,12 +192,6 @@ $(".actionButton").click(function(){
   });
 
 })
-
-// $("#add").click(function(){
-//   $("form").hide(500);
-//   $(".resultWrap").show(500);
-//   $(".actionButton").show(500);
-// })
 
 
 
