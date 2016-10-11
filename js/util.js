@@ -40,10 +40,16 @@ var addTask = function(){
     person = personText;
   }
 
-
   createListElement(task, date, person);
+  toast("a", "#createToast");
   clearInputs();
 
+}
+
+var toast = function(text, type){
+  console.log("meh");
+  $(type).append(document.createTextNode());
+  $(type).stop().fadeIn(500).delay(1000).fadeOut(500);
 }
 
 var enter = function(e){
