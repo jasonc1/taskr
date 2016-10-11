@@ -98,12 +98,11 @@ var completeTask = function(e){
   e.parentNode.parentNode.appendChild(temp);
   setTimeout(function(){temp.style.opacity = 1;}, 0);
 
-  deleteTask(e);
+  deleteTask(e.parentNode.childNodes[2].childNodes[2]);
 }
 
 var deleteTask = function(e){
   //deletes the task...
-
   e.parentNode.parentNode.style.opacity = 0;
   setTimeout(function(){e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);}, 500);
 
@@ -172,9 +171,6 @@ $(".actionButton").click(function(){
   $(".resultWrap").hide(500);
   $(".actionButton").hide(500);
 
-
-
-
   $("#cancel").click(function(){
     $("form").hide(500);
     $(".resultWrap").show(500);
@@ -192,11 +188,11 @@ $(".actionButton").click(function(){
 
 })
 
-$("#add").click(function(){
-  $("form").hide(500);
-  $(".resultWrap").show(500);
-  $(".actionButton").show(500);
-})
+// $("#add").click(function(){
+//   $("form").hide(500);
+//   $(".resultWrap").show(500);
+//   $(".actionButton").show(500);
+// })
 
 
 
