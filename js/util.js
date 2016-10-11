@@ -164,8 +164,18 @@ var createListElement = function(taskdata, date, name){//creates a new row, for 
 //   document.getElementById('form').style.display = "block";
 // }
 $(".actionButton").click(function(){
-  $("#form").toggle(500);
-  
+  $("#form").show(500);
+  $(".resultWrap").hide(500);
+  $(".actionButton").hide(500);
+
 
 })
+
+$("#add").click(function(){
+  $("#form").hide(500);
+  $(".resultWrap").show(500);
+  $(".actionButton").show(500);
+
+})
+
 
