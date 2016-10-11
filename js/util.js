@@ -88,7 +88,6 @@ var populate = function(){//for select dropdown
   }
 }
 
-
 var completeTask = function(e){
   toast("#completeToast");
   //create copy
