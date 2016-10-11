@@ -241,23 +241,24 @@ color: #fff;
 
 .toast{
   display: none;
-  background-color: #fff;
   height: auto;
-  width: 100px;
-  font-size: 12pt;
-  padding: .5rem 1rem .5rem 1rem;
-  position: absolute;
-  bottom: 10px;
+  width: 150px;
+  font-size: 10pt;
+  padding: 1rem 1rem 1rem 1rem;
+  position: fixed;
+  bottom: 50px;
   left: 50%;
-  margin-left: -50px;
+  margin-left: -75px;
   text-align: center;
-  color: #4fc3f7;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #323232;
 }
 
 
 /*-- MOBILE
   ––––––––––––––––––––––––––––––––––––––––––––––––––*/
-/*general*/
+/*general... essentially the same as mobile view, but for browser to fit as if it were mobile screen*/
 @media only screen and (max-width: 1100px) {
 .title{
     padding-top: 0;
@@ -336,8 +337,8 @@ color: #fff;
     border: 1px solid #fff;
     right: 0;
     bottom: 0;
-    margin-right: 25px;
-    margin-bottom: 25px;
+    margin-right: 33px;
+    margin-bottom: 33px;
     background-color: #fff;
     text-align: center;
     font-size: 8rem;
@@ -442,8 +443,8 @@ color: #fff;
     border: 1px solid #fff;
     right: 0;
     bottom: 0;
-    margin-right: 25px;
-    margin-bottom: 25px;
+    margin-right: 33px;
+    margin-bottom: 33px;
     background-color: #fff;
     text-align: center;
     font-size: 8rem;

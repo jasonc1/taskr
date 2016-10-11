@@ -9,6 +9,8 @@ window.onload = function(){
 
 //functions
 var addTask = function(){
+  toast("#createToast");
+
   var task = document.getElementById("task").value;
   var date = document.getElementById("dueDate").value;
   var personText = document.getElementById("assignPerson").value;
@@ -41,7 +43,6 @@ var addTask = function(){
   }
 
   createListElement(task, date, person);
-  toast("#createToast");
   clearInputs();
 
 }
@@ -91,7 +92,7 @@ var populate = function(){
 
 
 var completeTask = function(e){
-  // console.log("completing...");
+  toast("#completeToast");
   //create copy
   var temp = e.parentNode.cloneNode(true);
   //"cross through means done"
@@ -103,14 +104,17 @@ var completeTask = function(e){
   e.parentNode.parentNode.appendChild(temp);
   setTimeout(function(){temp.style.opacity = 1;}, 0);
 
-  deleteTask(e.parentNode.childNodes[2].childNodes[2]);
+  deleteTask(e.parentNode.childNodes[2].childNodes[2], false);//to prevent calling toast twice
+
 }
 
-var deleteTask = function(e){
+var deleteTask = function(e, toast){
   //deletes the task...
   e.parentNode.parentNode.style.opacity = 0;
   setTimeout(function(){e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);}, 500);
-
+  if(toast){//for when delete task action is called.
+    toast("#deleteToast");
+  }
 }
 
 var createListElement = function(taskdata, date, name){//creates a new row, for a task...
@@ -142,7 +146,7 @@ var createListElement = function(taskdata, date, name){//creates a new row, for 
   var del = document.createElement("a");//to delete task
   del.setAttribute("class", "del");
   del.appendChild(document.createTextNode("X"));
-  del.setAttribute("onclick", "deleteTask(this)");
+  del.setAttribute("onclick", "deleteTask(this, true)");
 
   var headRight = document.createElement("div");
   headRight.setAttribute("class", "head-right");
@@ -153,10 +157,6 @@ var createListElement = function(taskdata, date, name){//creates a new row, for 
   headRight.appendChild(due);
   headRight.appendChild(person);
   headRight.appendChild(del);
-  // task.appendChild(due);
-  // task.appendChild(person);
-  // task.appendChild(del);
-
 
   document.querySelector("#results").insertBefore(task, document.querySelector("#results").firstChild);
   setTimeout(function(){document.getElementById("tasks " + tasks).style.opacity = 1;}, 0);
