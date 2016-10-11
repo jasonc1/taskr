@@ -27,9 +27,8 @@ var addTask = function(){
     person = personText;
     if(!isAssigneeExists(personText)){
       assignees.push(personText);
-      console.log(assignees);
+      addAssignee(personText);
     }
-    addAssignee(personText);
   }
   else if(!(personSelect == "") && (personText == "")){
     document.getElementById("assignPerson").value = "";
@@ -48,7 +47,6 @@ var addTask = function(){
 }
 
 var toast = function(type){//visual notification to user
-  console.log("meh");
   $(type).stop().fadeIn(500).delay(1000).fadeOut(500);
 }
 
