@@ -89,6 +89,9 @@ var populate = function(){//for select dropdown
 }
 
 var completeTask = function(e){
+  if($(e).hasClass("box-fill")){//prevents completing task twice
+    return;
+  }
   toast("#completeToast");
   //create copy
   var temp = e.parentNode.cloneNode(true);
